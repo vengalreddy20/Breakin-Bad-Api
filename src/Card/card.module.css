@@ -8,10 +8,15 @@
     height: 20rem;
     width: 15rem;
     margin: 10px 0px;
+    border-radius: 10px;
 }
-.card h4{
-    font-size: 0.9rem;
-    margin: 15px 0px;
-    padding: 0px 20px;
+.card p{
+    font-size: 1.2rem;
+    padding: 0px 3px;
     color: crimson;
+    font-weight: bold;
+}
+.card p span{
+    color:black;
+    font-weight: 400;
 }

@@ -7,9 +7,9 @@ const Breakingbad = (props)=>{
         <div>
             <div className={styles.card}>
              <img key={props.id} src={props.img} alt="photo"/>
-             <h4> Name: {props.name}</h4>
-             <h4>Nick Name: {props.nickname}</h4>
-             <h4> Status: {props.status}</h4>
+             <p> Name:<span> {props.name}</span></p>
+             <p>Nick Name:<span> {props.nickname}</span></p>
+             <p> Status: <span> {props.status}</span></p>
              
              
             </div>
