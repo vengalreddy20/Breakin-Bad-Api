@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import Breakingbad from"../src/Card/breakingbad";
 import './App.css';
+import {useState,useEffect} from "react";
+
+const url="https://www.breakingbadapi.com/api/characters";
 
 function App() {
+  const[data,setData]=useState([]);
+    useEffect(()=>{
+        fetch(url)
+        .then((response)=>response.json())
+        .then((response)=>setData(response))
+        .then((response)=>console.log(response))
+
+        .catch();
+    },[]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+      <div className="App">
+        <h1>Breaking Bad Api</h1>
+      </div>
+      <div className="breakingbadcard">
+     
+       {data.map((item)=>(
+         <Breakingbad img={item.img} name={item.name} nickname={item.nickname} status={item.status} />
+       ))} 
+   
+      </div>
+
+  </div>
+
   );
 }
 
